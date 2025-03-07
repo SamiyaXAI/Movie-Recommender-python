@@ -1,0 +1,21 @@
+Explanation of the code:
+Data Loading: Data from two CSV files (u.data and Movie_Id_Titles) is loaded using pd.read_csv(). The first dataset contains user ratings, and the second contains movie titles.
+
+Data Merging: The two datasets are merged on the item_id column, so we can associate movie titles with ratings.
+
+Exploratory Data Analysis (EDA):
+
+The average rating per movie is calculated using groupby('title')['rating'].mean().
+The number of ratings per movie is calculated using groupby('title')['rating'].count().
+The data is visualized with histograms and joint plots to understand the distribution of ratings and the number of ratings.
+Movie Recommendation System:
+
+A pivot table is created to map users to movies, with ratings as values.
+The corrwith() function is used to compute correlations between the ratings of two movies (Star Wars and Liar Liar).
+The correlation results are cleaned by dropping NaN values and filtering out movies with fewer than 100 ratings.
+Recommendation:
+
+Movies are recommended based on their correlation with the chosen movies. The movies are then sorted by their correlation to determine the most similar ones.
+This code forms the foundation of a simple movie recommendation system based on user ratings and movie similarities.
+
+You said:
